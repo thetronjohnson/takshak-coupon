@@ -8,7 +8,7 @@ class Data(models.Model):
 	amount = models.CharField(max_length=100)
 
 	def __repr__(self):
-		return (f"Coupon for {self.generated_for}")
+		return (f"Coupon for {self.generated_for} by {self.created_by}")
 
 	def __str__(self):
-		return (f"Coupon for {self.generated_for}")
+		return (f"Coupon for {self.generated_for} by {self.created_by}")
