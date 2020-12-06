@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-from .models import Data, Counter
+from .models import Data
 import qrcode
 from PIL import Image,ImageFont,ImageDraw 
 
@@ -47,7 +47,7 @@ def dashboard(request):
 		data.amount = amount
 		data.save()
 
-		number = "TF00" + str(data.coupon_no)
+		number = "TF0" + str(data.coupon_no)
 
 		path, name = generate_coupon(name, number, amount)
 		return render(request, 'dashboard.html',{'path':path, 'name':name})
