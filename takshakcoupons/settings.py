@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coupons',
-    'csvexport',
+    'django_csv_exports',
 ]
 
 MIDDLEWARE = [
