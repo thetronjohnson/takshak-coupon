@@ -11,8 +11,8 @@ BASE_DIR = settings.MEDIA_ROOT
 def generate_coupon(name,no,amount):
 
 	source = Image.open(BASE_DIR + '/coupon.jpg')
-	font = ImageFont.truetype(BASE_DIR + "OpenSans-Regular.ttf", 65)
-	font2 = ImageFont.truetype(BASE_DIR + "OpenSans-Regular.ttf", 130)
+	font = ImageFont.truetype(BASE_DIR + "/OpenSans-Regular.ttf", 65)
+	font2 = ImageFont.truetype(BASE_DIR + "/OpenSans-Regular.ttf", 130)
 
 
 
