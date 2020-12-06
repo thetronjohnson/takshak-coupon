@@ -1,0 +1,16 @@
+asgiref==3.3.1
+certifi==2020.11.8
+Django==3.1.3
+django-csv-exports==1.0.5
+django-friendship==1.9.1
+gunicorn==20.0.4
+numpy==1.19.4
+pandas==1.1.4
+Pillow==8.0.1
+pymaging @ git+git://github.com/ojii/pymaging.git@596a08fce5664e58d6e8c96847393fbe987783f2
+pymaging-png @ git+git://github.com/ojii/pymaging-png.git@83d85c44e4b2342818e6c068065e031a9f81bb9f
+python-dateutil==2.8.1
+pytz==2020.4
+qrcode==6.1
+six==1.15.0
+sqlparse==0.4.1
