@@ -43,6 +43,7 @@ def dashboard(request):
 		data = Data()
 		data.created_by = request.user.username
 		data.generated_for = name
+		data.coupon_no = data.id
 		data.amount = amount
 		data.save()
 
