@@ -16,7 +16,7 @@ def generate_coupon(name,no,amount):
 
 
 
-	path = settings.MEDIA_URL+ f"reciept/{name}_{no}_coupon.jpg"
+	path = settings.MEDIA_ROOT+ f"/reciept/{name}_{no}_coupon.jpg"
 
 	draw = ImageDraw.Draw(source)
 
