@@ -43,10 +43,10 @@ def dashboard(request):
 		data = Data()
 		data.created_by = request.user.username
 		data.generated_for = name
-		data.coupon_no = data.id
 		data.amount = amount
 		data.save()
-
+		data.coupon_no = data.id
+		data.save()
 		number = "TF0" + str(data.coupon_no)
 
 		path, name = generate_coupon(name, number, amount)
