@@ -50,18 +50,11 @@
           <form class="needs-validation" novalidate method="POST">
           	{% csrf_token %}
             <div class="row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="firstName">Name</label>
                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required name="name">
                 <div class="invalid-feedback">
                   Valid name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Coupon No</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required name="number">
-                <div class="invalid-feedback">
-                  Valid coupon number is required.
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-from .models import Data
+from .models import Data, Counter
 import qrcode
 from PIL import Image,ImageFont,ImageDraw 
 
@@ -25,7 +25,7 @@ def generate_coupon(name,no,amount):
 	draw.text((1843,780), amount + "/-",font=font2,fill =(0, 0, 0))
 
 
-	qr_code = qrcode.make(f"Thank You for contributing Rs.{amount} for Takshak")
+	qr_code = qrcode.make(f"Thank You {name}, for contributing Rs.{amount} for Takshak")
 
 	source.paste(qr_code,(900,650))
 	source.save(path)
@@ -37,17 +37,18 @@ def generate_coupon(name,no,amount):
 def dashboard(request):
 	if request.method == 'POST':
 		name = request.POST['name']
-		number = request.POST['number']
 		amount = request.POST['amount']
-		path, name = generate_coupon(name, number, amount)
+		
 
 		data = Data()
 		data.created_by = request.user.username
 		data.generated_for = name
-		data.coupon_no = number
 		data.amount = amount
 		data.save()
 
+		number = "TF00" + str(data.coupon_no)
+
+		path, name = generate_coupon(name, number, amount)
 		return render(request, 'dashboard.html',{'path':path, 'name':name})
 
 	return render(request, 'dashboard.html')
