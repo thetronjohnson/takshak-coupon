@@ -1,4 +1,5 @@
 from django.db import models
+from csvexport.actions import csvexport
 
 # Create your models here.
 class Data(models.Model):
