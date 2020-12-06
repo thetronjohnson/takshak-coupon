@@ -16,7 +16,7 @@ def generate_coupon(name,no,amount):
 
 
 
-	path = settings.STATIC_ROOT+ f"/reciept/{name}_{no}_coupon.jpg"
+	path = settings.MEDIA_ROOT+ f"/reciept/{name}_{no}_coupon.jpg"
 
 	draw = ImageDraw.Draw(source)
 
@@ -30,7 +30,7 @@ def generate_coupon(name,no,amount):
 	source.paste(qr_code,(900,650))
 	source.save(path)
 
-	return ((settings.STATIC_URL + f"reciept/{name}_{no}_coupon.jpg"), f"{name}_{no}_coupon.jpg")
+	return ((settings.MEDIA_URL + f"reciept/{name}_{no}_coupon.jpg"), f"{name}_{no}_coupon.jpg")
 # Create your views here.
 
 @login_required
