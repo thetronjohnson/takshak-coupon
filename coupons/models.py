@@ -4,7 +4,7 @@ from django.db import models
 class Data(models.Model):
 	created_by = models.CharField(max_length=90)
 	generated_for = models.CharField(max_length=100)
-	coupon_no = models.AutoField()
+	coupon_no = models.BigAutoField()
 	amount = models.CharField(max_length=100)
 
 	def __repr__(self):
