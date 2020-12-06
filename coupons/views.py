@@ -44,6 +44,7 @@ def dashboard(request):
 		data.created_by = request.user.username
 		data.generated_for = name
 		data.amount = amount
+		data.issued_by = request.POST['issued-by']
 		data.save()
 		data.coupon_no = data.id
 		data.save()
